@@ -1,2 +1,7 @@
-Admin Cyber-VaultA lightweight credential management application built with Python, Streamlit, and SQLite. This tool allows for the storage and encryption of sensitive assets using Fernet symmetric encryption.FeaturesEncrypted Storage: Secrets are encrypted using the cryptography library before being saved to the database.Admin Access: Access to the vault requires an Admin Key entered via the sidebar.Asset Management: Users can add new assets, view decrypted secrets, and delete existing entries.Database Re-indexing: The application includes logic to re-index the database IDs after a record is removed.Backup Functionality: Users can download the encrypted vault.db file directly through the interface.Installation1. Install DependenciesThis application requires Python and the following libraries:streamlit cryptography pandas 
-2. Run the ApplicationExecute the following command in your terminal:streamlit run MyDB.py Project StructureMyDB.py: Contains the Streamlit UI, the derive_key function, and the database logic.vault.db: The SQLite database file containing the secrets table.Security ArchitectureEncryption Method: The application uses the Fernet (AES) implementation from the cryptography library.Key Derivation: The Admin Key is processed by a derive_key function that pads or truncates the input to 32 bytes before Base64 encoding.Database Schema: The secrets table consists of an auto-incrementing ID, a text label, and a BLOB column for the encrypted content.
+Prerequisites: Python 3.8+
+
+Setup: pip install -r requirements.txt
+
+Execution: streamlit run MyDB.py
+
+Security Note: Remind users that the default Admin Key is 1234 and should be changed in the code.
